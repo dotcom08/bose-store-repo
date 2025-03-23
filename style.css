@@ -57,6 +57,11 @@ a{
     text-decoration: none;
     color: unset;
 }
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
 
 svg{
     width: var(--font-size-14);
@@ -228,4 +233,267 @@ nav .logo-block{
 .logo img{
     width: 200px;
     object-fit: cover;
+}
+
+.hero{
+    background: var(--background-zinc-10);
+    padding: 40px 0;
+}
+
+.hero-image{
+    background-image: url('/images/hero1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1440px;
+    height: 60vh;
+    margin: 0 auto;
+}
+
+.hero-caption{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px 15px 0;
+    font-size: var(--font-size-12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.hero-caption div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-caption div .image-caption{
+    background: var(--background-zinc-20);
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.cards{
+    padding: 30px 0;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container .cards-header{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.container .cards-header a{
+    font-size: var(--font-size-18);
+    padding: 20px 0;
+    position: relative;
+}
+
+.active::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--background-blue-80);
+}
+
+.cards-grid{
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 350px);
+}
+
+.card{
+    position: relative;
+    padding: 20px;
+    transition: all .3s ease;
+    cursor: pointer;
+    z-index: 1;
+    background: #ffff;
+}
+
+.card:hover{
+    box-shadow: -1px 3px 31px -11px rgba(15,1,15.2);
+    z-index: 100;
+    height: 500px;
+}
+
+.card:hover .card-footer{
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover .card-title{
+    color: var(--background-blue-70);
+}
+
+
+
+.card .card-image{
+    padding: 0 20px;
+    position: relative;
+}
+.card .card-image img{
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.card:hover .card-image::after{
+    content: "Быстрый просмотр";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 10;
+    background: var(--background-zinc-40);
+    opacity: .4;
+    width: 80%;
+    height: 40px;
+    color: var(--text-color-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-info .card-price{
+    font-size: var(--font-size-21);
+    font-weight: 700;
+    margin: 20px 0 10px;
+}
+
+.card-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: var(--font-size-16);
+}
+.card-footer{
+    display: none;
+}
+
+.card-products{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px;
+}
+
+.card-products .product{
+    border: 1px solid var(--background-blue-80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.card-products .product img{
+    width: 35px;
+}
+.card-btn{
+    margin: 30px 0 10px;
+    padding: 10px 20px;
+    font-size: var(--font-size-16);
+    background: var(--background-blue-80);
+    color: var(--background-zinc-10);
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+.cards-stock-images{
+    margin: 40px 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cards-stock-images div img{
+    width: 100%;
+}
+
+
+.promotion{
+    background: var(--background-zinc-10);
+    padding: 50px 0;
+}
+
+.promotion-header, 
+.blog-header{
+    display: flex;
+    gap: 35px;
+    align-items: center;
+
+}
+.promotion-header a, 
+.blog-header a{
+    font-size: var(--font-size-18);
+    padding: 20px 0;
+    position: relative;
+}
+
+.promotion-grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.promotion-grid .promo-card img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.promo-card{
+    background: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+
+.promo-card:hover{
+    box-shadow: 0 -2px 18px 5px rgba(0, 0, 0, .2);
+}
+
+.promo-card div{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.promo-card div span:nth-of-type(2) {
+    font-size: var(--font-size-16);
+    padding: 20px 0;
+}
+
+
+.blog{
+    padding: 50px 0;
 }
